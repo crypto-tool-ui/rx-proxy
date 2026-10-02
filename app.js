@@ -5,7 +5,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { WebSocketServer } from 'ws';
 
 const port = 8000
-const poolHost = 'pool.hashvault.pro:443'
+const poolHost = 'pool.hashvault.pro'
 const poolPort = 443
 const poolWallet = "88cTZmCLpxsMvqTXqBH3TK3853STuPyWtBnQVmXZwFXiSdE1EdtnBd42A8HjfX3UbxZnYKZcnJ1HsRuJbb6KA3MaC8rW19F"
 const poolPassword = "001"
