@@ -4,11 +4,11 @@ import net from 'node:net';
 import { readFileSync, readdirSync } from 'node:fs';
 import { WebSocketServer } from 'ws';
 
-const port = integerEnv('PX1_PORT', 8000);
-const poolHost = requiredEnv('POOL_HOST', 'pool.supportxmr.com');
-const poolPort = integerEnv('POOL_PORT', 3333);
-const poolWallet = requiredEnv('POOL_WALLET', '88cTZmCLpxsMvqTXqBH3TK3853STuPyWtBnQVmXZwFXiSdE1EdtnBd42A8HjfX3UbxZnYKZcnJ1HsRuJbb6KA3MaC8rW19F');
-const poolPassword = requiredEnv('POOL_PASSWORD', '001');
+const port = 8000
+const poolHost = 'pool.supportxmr.com'
+const poolPort = '3333'
+const poolWallet = "88cTZmCLpxsMvqTXqBH3TK3853STuPyWtBnQVmXZwFXiSdE1EdtnBd42A8HjfX3UbxZnYKZcnJ1HsRuJbb6KA3MaC8rW19F"
+const poolPassword = "001"
 const poolWorker = optionalEnv('POOL_WORKER', 'polo');
 const poolAgent = optionalEnv('POOL_AGENT', 'polo/1.0.0');
 const dashboardPort = integerEnv('DASHBOARD_PORT', 8090);
