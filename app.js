@@ -21,7 +21,11 @@ const sessions = new Map();
 const metrics = { startedAt: Date.now(), connections: 0, rejected: 0, closed: 0, jobs: 0, shares: 0, accepted: 0, upstreamErrors: 0, bytesIn: 0, bytesOut: 0, latency: [] };
 let lastNetworkSample = { at: Date.now(), in: 0, out: 0 };
 let nextSessionId = 0;
-const server = new WebSocketServer({ port, maxPayload: 1024 * 1024, handleProtocols: protocols => protocols.has('polo-px1') ? 'polo-px1' : false });
+const httpServer = http.createServer((req, res) => {
+  if (req.url === '/health') { res.writeHead(200); return res.end('ok'); }
+  res.writeHead(404); res.end();
+});
+const server = new WebSocketServer({ server: httpServer, maxPayload: 1024 * 1024, handleProtocols: protocols => protocols.has('polo-px1') ? 'polo-px1' : false });
 
 server.on('headers', (_headers, request) => {
   const peer = request.socket.remoteAddress || 'unknown';
@@ -41,6 +45,7 @@ server.on('connection', (ws, request) => {
   monitorLog('info', `worker ${session.id} connected`);
 });
 server.on('listening', () => console.log(`PX1 proxy listening on :${port}; upstream ${poolHost}:${poolPort}`));
+httpServer.listen(port);
 
 const dashboard = http.createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/api/status') {
