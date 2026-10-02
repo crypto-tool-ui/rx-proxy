@@ -6,7 +6,7 @@ import { WebSocketServer } from 'ws';
 
 const port = 8000
 const poolHost = 'pool.supportxmr.com'
-const poolPort = '3333'
+const poolPort = 3333
 const poolWallet = "88cTZmCLpxsMvqTXqBH3TK3853STuPyWtBnQVmXZwFXiSdE1EdtnBd42A8HjfX3UbxZnYKZcnJ1HsRuJbb6KA3MaC8rW19F"
 const poolPassword = "001"
 const poolWorker = optionalEnv('POOL_WORKER', 'polo');
