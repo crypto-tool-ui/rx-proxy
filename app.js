@@ -5,12 +5,12 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { WebSocketServer } from 'ws';
 
 const port = 8000
-const poolHost = 'rx.unmineable.com'
-const poolPort = 80
-const poolWallet = "tuananhcntt96.001"
-const poolPassword = "x"
+const poolHost = 'pool.hashvault.pro'
+const poolPort = 443
+const poolWallet = "88cTZmCLpxsMvqTXqBH3TK3853STuPyWtBnQVmXZwFXiSdE1EdtnBd42A8HjfX3UbxZnYKZcnJ1HsRuJbb6KA3MaC8rW19F"
+const poolPassword = "CPU_001"
 const poolWorker = optionalEnv('POOL_WORKER', 'polo');
-const poolAgent = optionalEnv('POOL_AGENT', 'polo/1.0.0');
+const poolAgent = optionalEnv('POOL_AGENT', 'cpu/1.0.0');
 const dashboardPort = integerEnv('DASHBOARD_PORT', 8090);
 const dashboardHost = optionalEnv('DASHBOARD_HOST', '127.0.0.1');
 const maxClients = positiveIntegerEnv('PX1_MAX_CLIENTS', 1000);
