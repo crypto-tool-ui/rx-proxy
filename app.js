@@ -153,7 +153,7 @@ class MinerSession {
       // widely-supported extension; retaining the worker suffix also supports
       // pools that derive the worker name from the login value.
       this.poolRequest('login', {
-        login: poolWallet.includes('.') ? poolWallet : `${poolWallet}.${poolWorker}`,
+        login: poolWallet,
         pass: poolPassword,
         agent: poolAgent,
         rigid: poolWorker,
