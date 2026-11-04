@@ -7,7 +7,7 @@ import { WebSocketServer } from 'ws';
 const port = 8000
 const poolHost = 'ca-salvium.miningocean.org'
 const poolPort = 8332
-const poolWallet = "solo:SC1siBZVQnW4QwGCukbTMU6FPtE35s7BkFLGcT6v2kqkTM4AremDP8jGJo2ScTQopYdiHYNTMJsHPED4PTcwm24MiSi6RBsusEE/001"
+const poolWallet = "solo:SC1siBZVQnW4QwGCukbTMU6FPtE35s7BkFLGcT6v2kqkTM4AremDP8jGJo2ScTQopYdiHYNTMJsHPED4PTcwm24MiSi6RBsusEE"
 const poolPassword = "solo"
 const poolWorker = optionalEnv('POOL_WORKER', 'xmrig');
 const poolAgent = optionalEnv('POOL_AGENT', 'xmrig/1.0.0');
