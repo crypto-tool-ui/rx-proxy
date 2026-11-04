@@ -5,10 +5,10 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { WebSocketServer } from 'ws';
 
 const port = 8000
-const poolHost = 'xmr.kryptex.network'
-const poolPort = 7029
-const poolWallet = "88cTZmCLpxsMvqTXqBH3TK3853STuPyWtBnQVmXZwFXiSdE1EdtnBd42A8HjfX3UbxZnYKZcnJ1HsRuJbb6KA3MaC8rW19F/001"
-const poolPassword = "x"
+const poolHost = 'ca-salvium.miningocean.org'
+const poolPort = 8332
+const poolWallet = "solo:SC1siBZVQnW4QwGCukbTMU6FPtE35s7BkFLGcT6v2kqkTM4AremDP8jGJo2ScTQopYdiHYNTMJsHPED4PTcwm24MiSi6RBsusEE/001"
+const poolPassword = "solo"
 const poolWorker = optionalEnv('POOL_WORKER', 'xmrig');
 const poolAgent = optionalEnv('POOL_AGENT', 'xmrig/1.0.0');
 const dashboardPort = integerEnv('DASHBOARD_PORT', 8090);
